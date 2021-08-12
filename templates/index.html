@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>crud operation</title>
+</head>
+<body>
+<center>
+<h1>How to create crude operation</h1>
+<h2>Djoango framework</h2>
+<hr>
+<a href="{% url 'save_record' %}">Add student Record</a>
+<table border="1">
+    <tr>
+        <th>ID</th>
+         <th>name</th>
+         <th>email</th>
+         <th>address</th>
+         <th>phone number</th>
+        <th>Gender</th>
+
+
+    </tr>
+
+        {% for all in cruds %}
+            <tr>
+            <td>{{ all.id }}</td>
+            <td>{{ all.name }}</td>
+            <td>{{ all.email}}</td>
+            <td>{{ all.addess }}</td>
+            <td>{{ all.phone }}</td>
+            <td>{{ all.gender }}</td>
+            <td> <a href="/edit/{{ all.id }}">Edit</a> </td>
+             <td> <a href="/delete/{{ all.id }}">Delete</a> </td>
+            </tr>
+
+
+
+
+        {% endfor %}
+</center>
+</table>
+</body>
+</html>
